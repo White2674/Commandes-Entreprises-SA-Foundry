@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalogue - Site Commande</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Catalogue</h1>
+    <form id="catalogueForm">
+      <div id="articlesList"></div>
+      <button type="submit">Voir le récapitulatif</button>
+    </form>
+  </div>
+
+  <script>
+    // Vérifie que l'utilisateur est connecté
+    if (!sessionStorage.getItem("user")) {
+      alert("Veuillez vous connecter d'abord.");
+      window.location.href = "index.html";
+    }
+
+    // Liste des articles
+    const articles = [
+      { id: 1, name: "Caoutchouc", price: 5, img: "https://i.goopics.net/u6bfea.png" },
+      { id: 2, name: "Encre", price: 5, img: "https://i.goopics.net/iaq2yq.png" },
+      { id: 3, name: "Eponge pour voiture", price: 2, img: "https://i.goopics.net/t57irx.png" },
+      { id: 4, name: "Bidon peinture", price: 2, img: "https://i.goopics.net/svol49.png" },
+      { id: 5, name: "Solvant", price: 22, img: "https://i.goopics.net/fmxeve.png" },
+      { id: 6, name: "Pâtes", price: 2, img: "https://i.goopics.net/x8ph9c.png" },
+      { id: 7, name: "Nouilles", price: 2, img: "https://i.goopics.net/ku2my9.png" },
+      { id: 8, name: "Coca Zero", price: 2, img: "https://i.goopics.net/wcod3s.png" },
+      { id: 9, name: "Caramel", price: 2, img: "https://i.goopics.net/nnodsr.png" },
+      { id: 10, name: "Tortilla", price: 2, img: "https://i.goopics.net/v7hvrx.png" },
+      { id: 11, name: "Crème glacée", price: 2, img: "https://i.goopics.net/e5s92g.png" },
+      { id: 12, name: "Crème glacée (pot)", price: 2, img: "https://i.goopics.net/6peodu.png" },
+      { id: 13, name: "Crème fraiche", price: 2, img: "https://i.goopics.net/xief5j.png" },
+      { id: 14, name: "Moutarde", price: 2, img: "https://i.goopics.net/a7y74z.png" },
+      { id: 15, name: "Coquille à tacos", price: 2, img: "https://i.goopics.net/iacqp1.png" },
+      { id: 16, name: "Pain à burger", price: 2, img: "https://i.goopics.net/oaly88.png" },
+      { id: 17, name: "Barre de chocolat", price: 2, img: "https://i.goopics.net/1ecje1.png" },
+      { id: 18, name: "Pain grillé", price: 2, img: "https://i.goopics.net/zdux1g.png" },
+      { id: 19, name: "Bagel", price: 2, img: "https://i.goopics.net/7lkekl.png" },
+      { id: 20, name: "Eau purifié", price: 1.75, img: "https://i.goopics.net/ljqo78.png" },
+      { id: 21, name: "Bicarbonate de Soude", price: 2, img: "https://i.goopics.net/rparl3.png" },
+      { id: 22, name: "Noix", price: 7, img: "https://i.goopics.net/avlvjh.jpg" },
+      { id: 23, name: "Noix de Cajou", price: 7, img: "https://i.goopics.net/tdsu2g.jpg" },
+      { id: 24, name: "Pistache", price: 7, img: "https://i.goopics.net/7xshp7.jpg" },
+    ];
+
+    const articlesList = document.getElementById("articlesList");
+
+    // Affiche les articles dans le formulaire
+    articles.forEach((art) => {
+      const articleDiv = document.createElement("div");
+      articleDiv.className = "article";
+
+      articleDiv.innerHTML = `
+        <img src="${art.img}" alt="${art.name}" />
+        <div class="article-details">
+          <strong>${art.name}</strong><br />
+          Prix : ${art.price.toFixed(2)} $
+        </div>
+        <div class="article-qty">
+          <label>Quantité :</label>
+          <input type="number" min="0" value="0" name="qty-${art.id}" />
+        </div>
+      `;
+
+      articlesList.appendChild(articleDiv);
+    });
+
+    // Envoi du formulaire
+    const form = document.getElementById("catalogueForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const order = [];
+
+      articles.forEach((art) => {
+        const qty = parseInt(formData.get(`qty-${art.id}`)) || 0;
+        if (qty > 0) {
+          order.push({ ...art, quantity: qty });
+        }
+      });
+
+      if (order.length === 0) {
+        alert("Veuillez sélectionner au moins un article.");
+        return;
+      }
+
+      sessionStorage.setItem("order", JSON.stringify(order));
+      window.location.href = "recap.html";
+    });
+  </script>
+</body>
+</html>
