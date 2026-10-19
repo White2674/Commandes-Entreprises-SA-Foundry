@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('https://i.goopics.net/782nl4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 40px 15px;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  max-width: 520px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  padding: 30px 40px;
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2a2a72;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+input, select {
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #fc5c7d;
+  box-shadow: 0 0 8px rgba(252, 92, 125, 0.4);
+}
+
+button {
+  margin-top: 30px;
+  padding: 14px;
+  background: #fc5c7d;
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  box-shadow: 0 5px 15px rgba(252, 92, 125, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: #e44264;
+  box-shadow: 0 8px 20px rgba(228, 66, 100, 0.6);
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.article img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.article-details {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.article-qty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.article-qty label {
+  font-weight: 500;
+  color: #555;
+}
+
+.article-qty input {
+  width: 70px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.article-qty input:focus {
+  border-color: #6a82fb;
+  box-shadow: 0 0 8px rgba(106,130,251,0.4);
+}
+
+#deliveryInfo p {
+  font-weight: 500;
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+thead tr {
+  background: #6a82fb;
+  color: white;
+}
+
+thead tr th {
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody tr td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tfoot tr td {
+  padding: 10px;
+  font-weight: 700;
+  color: #2a2a72;
+  border-top: 2px solid #6a82fb;
+  text-align: right;
+}
+
+tfoot tr td:first-child {
+  text-align: left;
+}
+
+/* ✅ Nouveau groupe de boutons côte à côte */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+/* ✅ Bouton modifier (si utilisé indépendamment) */
+#backBtn {
+  background: #6a82fb;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(106, 130, 251, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#backBtn:hover {
+  background: #4e64d9;
+  box-shadow: 0 8px 20px rgba(78, 100, 217, 0.6);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
