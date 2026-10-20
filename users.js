@@ -8,8 +8,8 @@ const users = [
   { username: "Auto Exotic", password: "AE6042" },
   { username: "South Side Custom", password: "SSC6208" },
   { username: "Flywheels", password: "FWL5032" },
-  { username: "LTDGS", password: "GS9412" },
-  { username: "LTDLS", password: "LS7320" },
+  { username: "LTD Grove Street", password: "GS9412" },
+  { username: "LTDLittle Seoul", password: "LS7320" },
   { username: "LTD Grapeseed", password: "G6107" },
   { username: "LTD Paleto", password: "P7296" },
 ];
