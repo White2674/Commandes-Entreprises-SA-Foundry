@@ -12,6 +12,7 @@ const users = [
   { username: "LTDLittle Seoul", password: "LS7320" },
   { username: "LTD Grapeseed", password: "G6107" },
   { username: "LTD Paleto", password: "P7296" },
+  { username: "Davis Quartz", password: "DQ7132" },
 ];
 
 // Fonction pour vérifier les identifiants
