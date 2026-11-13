@@ -5,7 +5,7 @@
 const users = [
   { username: "admin", password: "white.2674" },
   { username: "LS Custom", password: "LSC3212" },
-  { username: "Auto Exotic", password: "AE6042" },
+  { username: "Auto Exotic", password: "AE6047" },
   { username: "South Side Custom", password: "SSC6208" },
   { username: "Flywheels", password: "FWL5032" },
   { username: "LTD Grove Street", password: "GS9412" },
